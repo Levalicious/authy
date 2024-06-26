@@ -27,9 +27,10 @@ type deviceRegistration struct {
 	APIKey   string `json:"api_key,omitempty"`
 }
 
+var savePtr = flag.String("save", "", "Save encrypted tokens to this JSON file")
+var loadPtr = flag.String("load", "", "Load tokens from this JSON file instead of the server")
+
 func main() {
-	savePtr := flag.String("save", "", "Save encrypted tokens to this JSON file")
-	loadPtr := flag.String("load", "", "Load tokens from this JSON file instead of the server")
 	flag.Parse()
 
 	var resp struct {
